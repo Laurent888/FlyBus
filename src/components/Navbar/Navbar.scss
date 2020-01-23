@@ -1,0 +1,30 @@
+@import "../../variables";
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navlist {
+  display: flex;
+  flex-direction: row;
+
+  li {
+    display: flex;
+    align-items: center;
+    margin: 1rem 2rem;
+
+    a {
+      padding-bottom: 0.2rem;
+      font-size: 1.4rem;
+      color: $primary-color;
+      border-bottom: 2px solid #fff;
+
+      &:hover {
+        color: $blue-light;
+        border-bottom: 2px solid $blue-light;
+      }
+    }
+  }
+}

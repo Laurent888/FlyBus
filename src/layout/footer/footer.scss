@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  &-item {
+    margin: 0 4rem;
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      a {
+        color: #333;
+        font-size: 1.3rem;
+        padding: 0.6rem 0;
+      }
+    }
+  }
+
+  .logo {
+    font-size: 5rem;
+  }
+}

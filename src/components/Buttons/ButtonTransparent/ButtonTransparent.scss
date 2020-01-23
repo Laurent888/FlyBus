@@ -1,0 +1,32 @@
+@import "../../../variables";
+
+.button-transparent {
+  margin: 1rem;
+  padding: 1rem 1rem;
+  background-color: transparent;
+  border: 3px solid #fff;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    border: 3px solid rgb(240, 240, 240);
+    background-color: rgb(240, 240, 240);
+
+    span {
+      color: $primary-color;
+    }
+
+    i {
+      color: $primary-color;
+    }
+  }
+
+  span {
+    margin-right: 5px;
+    color: #fff;
+    font-weight: 400;
+  }
+
+  i {
+    color: #fff;
+  }
+}

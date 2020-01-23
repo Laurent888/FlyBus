@@ -1,0 +1,68 @@
+@import "./variables";
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+
+  font-size: 1.6rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  letter-spacing: 1px;
+  line-height: 2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  padding: 0;
+  margin: 0;
+}
+
+.section-light {
+  padding: 4rem 0;
+  background-color: #fff;
+}
+
+.section-dark {
+  padding: 4rem 0;
+  background-color: rgb(245, 245, 245);
+}
+
+.section {
+  background: linear-gradient(
+    360deg,
+    rgba(247, 247, 247, 1) 0%,
+    rgba(255, 255, 255, 1) 51%,
+    rgba(255, 255, 255, 1) 67%
+  );
+
+  padding: 5rem 0;
+}
+
+.row {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.m-heading {
+  font-size: 5rem;
+  font-weight: 200;
+  color: $primary-color;
+}
+
+.my-3 {
+  margin-top: 4rem;
+}

@@ -1,0 +1,7 @@
+.aircraft-grid {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-column-gap: 3rem;
+  grid-row-gap: 5rem;
+}
