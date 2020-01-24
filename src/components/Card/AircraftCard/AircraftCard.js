@@ -4,7 +4,7 @@ import "./AircraftCard.scss";
 
 const AircraftCard = props => {
   return (
-    <Link>
+    <Link to={props.title}>
       <div className="card">
         <div>
           <img

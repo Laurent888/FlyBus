@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { FlybusContext } from "../../context/context";
 import "./DescriptionSection.scss";
-import data from "../../data";
 
-const DescriptionSection = () => {
-  const flybusPresentation = data.homepage[0].description1;
+const DescriptionSection = props => {
+  const { addLineBreak } = useContext(FlybusContext);
+
   return (
-    <div className="row descriptionSection my-3">
-      <h3 className="m-heading">
-        Flybus Commercial Airplanes: A Better Way To Fly.
-      </h3>
-      <p>{flybusPresentation}</p>
+    <div className="section">
+      <div className="row descriptionSection my-3">
+        <h3 className="m-heading">{props.content.title}</h3>
+        <p>{addLineBreak(props.content.content)}</p>
+      </div>
     </div>
   );
 };

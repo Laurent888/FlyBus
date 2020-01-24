@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import "./Logo.scss";
 
 const Logo = () => {
-  return <Link className="logo">FlyBus</Link>;
+  return (
+    <Link to="/" className="logo">
+      FlyBus
+    </Link>
+  );
 };
 
 export default Logo;

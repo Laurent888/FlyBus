@@ -7,7 +7,7 @@ const ArticleHighlight = props => {
     <div className="article-highlight row">
       <div></div>
       <img
-        src={props.image}
+        src={props.image[0]}
         alt="flybus-img"
         style={{
           width: "100%",
@@ -18,7 +18,7 @@ const ArticleHighlight = props => {
       />
       <div className="article-highlight__content">
         <h3 className="lg-title">{props.title}</h3>
-        <ButtonTransparent label="Learn More" className="btn" />
+        <ButtonTransparent label="Learn More" className="btn" url={props.url} />
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import "./ButtonTransparent.scss";
 const ButtonTransparent = props => {
   return (
     <div>
-      <Link to="/" className="button-transparent">
+      <Link to={props.url} className="button-transparent">
         <span>{props.label}</span>
         <i className="fas fa-arrow-right" />
       </Link>

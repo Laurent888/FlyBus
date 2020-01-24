@@ -9,8 +9,10 @@ body {
   font-size: 1.6rem;
 }
 
-li {
+li,
+ul {
   list-style: none;
+  margin: 0;
 }
 
 a {
@@ -61,6 +63,10 @@ h5 {
   font-size: 5rem;
   font-weight: 200;
   color: $primary-color;
+}
+
+.my-2 {
+  margin-top: 2.5rem;
 }
 
 .my-3 {

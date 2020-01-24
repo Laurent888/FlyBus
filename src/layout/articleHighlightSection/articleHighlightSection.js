@@ -8,6 +8,7 @@ const articleHighlightSection = () => {
       key={article.id}
       image={article.image}
       title={article.title}
+      url={article.url}
     />
   ));
 

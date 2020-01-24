@@ -1,6 +1,8 @@
 import React from "react";
 import "./Hero.scss";
 
+// This component need : title, src
+
 const Hero = props => {
   return (
     <div className="hero">

@@ -9,10 +9,10 @@ const Navbar = () => {
       <Logo />
       <ul className="navlist">
         <li>
-          <Link>Commercial</Link>
+          <Link to="/">Commercial</Link>
         </li>
         <li>
-          <Link>Defence</Link>
+          <Link to="/defense">Defense</Link>
         </li>
         <li>
           <Link>Space</Link>
