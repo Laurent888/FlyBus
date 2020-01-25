@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./AircraftCard.scss";
 
 const AircraftCard = props => {
+  console.log(props.match);
   return (
-    <Link to={props.title}>
+    <Link to={`${props.match.url}/${props.title}`}>
       <div className="card">
         <div>
           <img
@@ -24,4 +25,4 @@ const AircraftCard = props => {
   );
 };
 
-export default AircraftCard;
+export default withRouter(AircraftCard);

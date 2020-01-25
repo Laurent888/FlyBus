@@ -72,3 +72,9 @@ h5 {
 .my-3 {
   margin-top: 4rem;
 }
+
+@media (max-width: $breakpoint-width) {
+  .section {
+    padding: 2rem 0;
+  }
+}

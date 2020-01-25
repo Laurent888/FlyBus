@@ -33,3 +33,11 @@
     margin: 0 auto;
   }
 }
+
+@media (max-width: $breakpoint-width) {
+  .hero {
+    &-heading {
+      font-size: 4rem;
+    }
+  }
+}

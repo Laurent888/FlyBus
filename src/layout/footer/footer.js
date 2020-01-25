@@ -7,15 +7,19 @@ import FooterCredit from "../../components/FooterCredit/FooterCredit";
 
 const footer = () => {
   const renderedUtilities = data.footer.utilities.map(utility => (
-    <Fragment>
+    <Fragment key={utility}>
       <Link>{utility}</Link>
     </Fragment>
   ));
   const renderedCategories = data.footer.categories.map(category => (
-    <Link>{category}</Link>
+    <Fragment key={category}>
+      <Link>{category}</Link>
+    </Fragment>
   ));
   const renderedPopular = data.footer.popular.map(popular => (
-    <Link>{popular}</Link>
+    <Fragment key={popular}>
+      <Link>{popular}</Link>
+    </Fragment>
   ));
 
   return (

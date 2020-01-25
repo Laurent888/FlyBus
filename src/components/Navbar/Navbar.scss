@@ -1,5 +1,13 @@
 @import "../../variables";
 
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 100;
+}
+
 .row {
   display: flex;
   justify-content: space-between;
@@ -19,12 +27,91 @@
       padding-bottom: 0.2rem;
       font-size: 1.4rem;
       color: $primary-color;
-      border-bottom: 2px solid #fff;
+      border-bottom: 2px solid rgba(255, 255, 255, 0);
 
       &:hover {
         color: $blue-light;
         border-bottom: 2px solid $blue-light;
       }
     }
+  }
+}
+
+.hamburger-menu {
+  display: none;
+  padding: 1rem;
+  cursor: pointer;
+  align-content: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+
+  > div {
+    position: relative;
+    height: 2px;
+    width: 3rem;
+    background-color: $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  > div::before,
+  > div::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: $primary-color;
+  }
+
+  > div::before {
+    transform: translateY(-10px);
+  }
+  > div::after {
+    transform: translateY(10px);
+  }
+
+  &.open {
+    transform: rotate(45deg);
+
+    > div::before {
+      opacity: 0;
+    }
+
+    > div::after {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+@media screen and (max-width: "600px") {
+  .navlist {
+    display: none;
+
+    &.show {
+      position: absolute;
+      top: 6rem;
+      right: 0;
+      background-color: rgba(142, 183, 238, 0.658);
+      border-radius: 0 0 0 5px;
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      align-items: flex-start;
+
+      a {
+        font-size: 2rem;
+        color: #fff;
+
+        &:hover {
+          color: $primary-color;
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  .hamburger-menu {
+    display: flex;
   }
 }

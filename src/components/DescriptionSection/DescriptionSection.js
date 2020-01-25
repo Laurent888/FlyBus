@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { FlybusContext } from "../../context/context";
 import "./DescriptionSection.scss";
 
+// This component needs : content.title & content.content
+
 const DescriptionSection = props => {
   const { addLineBreak } = useContext(FlybusContext);
 
