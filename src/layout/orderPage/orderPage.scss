@@ -2,35 +2,86 @@
 
 .catalogue {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-  &-image {
-    width: 160px;
-    height: 100px;
-  }
-  &-name {
-    color: $primary-color;
-    font-size: 3rem;
-    font-weight: 700;
+  &-list {
+    width: 100%;
   }
 
   &-item {
-    display: flex;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 0.5fr 0.5fr;
     align-items: center;
-    justify-content: space-between;
     border-bottom: 1px solid rgb(169, 196, 255);
 
-    div {
-      padding: 1rem 0;
-      width: 30rem;
+    &__image {
+      opacity: 0;
+      display: block;
+      position: absolute;
+      top: -6rem;
+      left: 20rem;
+      box-shadow: 3px 3px 7px rgba(45, 95, 124, 0.555);
+      height: 200px;
+      width: 350px;
+      z-index: 100;
+      border-radius: 8px;
+      overflow: hidden;
+      transform: translateX(-1rem);
+      transition: all 0.3s ease-out;
+    }
+
+    &__name {
+      color: $primary-color;
+      font-size: 2rem;
+      font-weight: 700;
+      padding: 2rem 0;
+
+      &:hover {
+        cursor: pointer;
+        ~ .catalogue-item__image {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    &__type {
+      text-transform: capitalize;
+
+      &.military {
+        color: rgb(151, 5, 5);
+      }
     }
   }
-  &-type {
-    text-transform: capitalize;
+
+  .total-price {
+    width: 95%;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__value {
+      font-weight: 400;
+    }
   }
 }
 
 .label {
   font-size: 3rem;
   font-weight: 700;
+  margin-top: 5rem;
+  padding-bottom: 2rem;
   color: rgb(0, 67, 105);
+}
+
+.buttons {
+  display: flex;
+
+  button {
+    margin-left: 1rem;
+  }
 }

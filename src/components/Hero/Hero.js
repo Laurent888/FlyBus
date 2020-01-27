@@ -15,7 +15,10 @@ const Hero = props => {
         ></img>
       </div>
       <div className="row">
-        <h2 className="hero-heading">{props.title}</h2>
+        <div className="row-container">
+          <div></div>
+          <h2 className="hero-heading">{props.title}</h2>
+        </div>
       </div>
     </div>
   );

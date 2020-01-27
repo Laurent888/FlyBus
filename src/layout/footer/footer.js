@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import "./footer.scss";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Logo from "../../components/Logo/Logo";
 import data from "../../data";
 import FooterCredit from "../../components/FooterCredit/FooterCredit";
@@ -8,17 +8,17 @@ import FooterCredit from "../../components/FooterCredit/FooterCredit";
 const footer = () => {
   const renderedUtilities = data.footer.utilities.map(utility => (
     <Fragment key={utility}>
-      <Link>{utility}</Link>
+      <p>{utility}</p>
     </Fragment>
   ));
   const renderedCategories = data.footer.categories.map(category => (
     <Fragment key={category}>
-      <Link>{category}</Link>
+      <p>{category}</p>
     </Fragment>
   ));
   const renderedPopular = data.footer.popular.map(popular => (
     <Fragment key={popular}>
-      <Link>{popular}</Link>
+      <p>{popular}</p>
     </Fragment>
   ));
 

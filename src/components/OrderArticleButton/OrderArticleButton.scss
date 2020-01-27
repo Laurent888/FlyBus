@@ -1,0 +1,30 @@
+@import "../../variables";
+
+.orderArticleBtn {
+  display: flex;
+  flex-direction: row;
+
+  button {
+    width: 30px;
+    height: 40px;
+    background-color: #fff;
+    font-size: 2rem;
+    font-weight: 400;
+    border: 1px solid $blue-light;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: rgb(195, 206, 255);
+    }
+  }
+
+  &__num {
+    padding: 0 1rem;
+    margin: 0 1rem;
+    font-size: 2rem;
+    color: $primary-color;
+  }
+}

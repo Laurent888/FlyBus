@@ -1,6 +1,5 @@
 import React from "react";
 import "./ButtonTransparentLg.scss";
-import { Link } from "react-router-dom";
 
 const ButtonTransparentLg = props => {
   return (
