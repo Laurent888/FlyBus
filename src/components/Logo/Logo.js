@@ -4,7 +4,7 @@ import "./Logo.scss";
 
 const Logo = () => {
   return (
-    <Link to="/commercial" className="logo">
+    <Link to="/" className="logo">
       FlyBus
     </Link>
   );

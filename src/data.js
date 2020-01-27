@@ -23,6 +23,7 @@ import lion from "./img/tigre-thumb.jpg";
 import tigerSingle from "./img/tiger-family.jpg";
 import a330mrttSingle from "./img/a330mrtt-family.jpg";
 import a400mSingle from "./img/a400m-family.jpg";
+import duskHero from "./img/dusk-hero.jpg";
 
 export default {
   aircraft: [
@@ -143,6 +144,14 @@ export default {
         title: "Flybus Commercial Airplanes: A Better Way To Fly.",
         content:
           "Flybus is an international reference in the aerospace sector. We design, manufacture and deliver industry-leading commercial aircraft, helicopters, military transports, satellites and launch vehicles, as well as providing data services, navigation, secure communications, urban mobility and other solutions for customers on a global scale. With a forward-looking strategy based on cutting-edge technologies, digital and scientific excellence, we aim for a better-connected, safer and more prosperous world."
+      }
+    },
+    {
+      description2: {
+        title: "Welcome to Flybus",
+        content:
+          "Flybus is the world's largest aerospace company and leading manufacturer of commercial jetliners, defense, space and security systems, and service provider of aftermarket support. As America’s biggest manufacturing exporter, the company supports airlines and U.S. and allied government customers in more than 150 countries. Flybus products and tailored services include commercial and military aircraft, satellites, weapons, electronic and defense systems, launch systems, advanced information and communication systems, and performance-based logistics and training.",
+        image: duskHero
       }
     }
   ],

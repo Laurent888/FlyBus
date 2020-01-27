@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./layout/footer/footer";
 import { Route, Switch } from "react-router-dom";
 import Homepage from "./layout/homepage/homepage";
+import Commercial from "./layout/commercial/commercial";
 import DefensePage from "./layout/defensePage/defensePage";
 import SpacePage from "./layout/spacePage/spacePage";
 import SingleAircraft from "./layout/singleAircraft/singleAircraft";
@@ -19,7 +20,8 @@ function App() {
       <Navbar />
       <ScrollToTop />
       <Switch>
-        <Route exact path="/commercial" component={Homepage} />
+        <Route exact path="/" component={Homepage} />
+        <Route exact path="/commercial" component={Commercial} />
         <Route exact path="/defense" component={DefensePage} />
         <Route exact path="/space" component={SpacePage} />
         <Route exact path="/factory-tour" component={FactoryTour} />
