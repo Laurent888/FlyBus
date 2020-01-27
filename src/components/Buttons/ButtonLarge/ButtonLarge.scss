@@ -9,10 +9,11 @@
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
+    outline: none;
+    margin: 2rem;
   }
   &.danger {
     button {
-      outline: none;
       color: #fff;
       border: 1px solid #e00d57;
       background-color: #e00d57;
@@ -30,8 +31,6 @@
 
   &.default {
     button {
-      box-sizing: content-box;
-      outline: none;
       color: $primary-color;
       border: 1px solid rgb(197, 197, 197);
       background-color: #ffffff;
@@ -42,6 +41,21 @@
       }
       &:active {
         background-color: #cecece94;
+      }
+    }
+  }
+  &.success {
+    button {
+      color: #fff;
+      border: 1px solid #37b937;
+      background-color: #37b937;
+      transition: all 0.2s ease-out;
+      &:hover {
+        background-color: #30a030;
+        cursor: pointer;
+      }
+      &:active {
+        background-color: #30a0306c;
       }
     }
   }

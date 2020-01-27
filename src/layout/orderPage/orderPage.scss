@@ -1,5 +1,9 @@
 @import "../../variables";
 
+.orderPage {
+  position: relative;
+}
+
 .catalogue {
   width: 100%;
   display: flex;
@@ -26,7 +30,7 @@
       box-shadow: 3px 3px 7px rgba(45, 95, 124, 0.555);
       height: 200px;
       width: 350px;
-      z-index: 100;
+      z-index: -5;
       border-radius: 8px;
       overflow: hidden;
       transform: translateX(-1rem);
@@ -38,12 +42,14 @@
       font-size: 2rem;
       font-weight: 700;
       padding: 2rem 0;
+      width: 30%;
 
       &:hover {
         cursor: pointer;
         ~ .catalogue-item__image {
           opacity: 1;
           transform: translateY(0);
+          z-index: 100;
         }
       }
     }
@@ -83,5 +89,29 @@
 
   button {
     margin-left: 1rem;
+  }
+}
+
+.fa-exclamation-triangle {
+  position: relative;
+  .authaurization {
+    display: none;
+    text-transform: lowercase;
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    font-family: "Raleway", sans-serif;
+    width: 180px;
+    border-radius: 5px;
+    background-color: rgba(124, 124, 124, 0.253);
+  }
+  &:hover {
+    .authaurization {
+      display: block;
+      position: absolute;
+      top: -5rem;
+      right: -200px;
+      z-index: 200;
+    }
   }
 }
