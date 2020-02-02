@@ -1,5 +1,6 @@
 import React from "react";
 import "./TechSpecification.scss";
+import RetailPrice from "./RetailPrice/RetailPrice";
 
 const TechSpecification = props => {
   const spec = props.spec;
@@ -27,13 +28,7 @@ const TechSpecification = props => {
             </ul>
           </div>
         </div>
-        <div>
-          <h3 className="m-heading">Retail Price</h3>
-          <div className="price my-3">
-            <h5>Price</h5>
-            <p>{spec.price} millions &euro;</p>
-          </div>
-        </div>
+        <RetailPrice spec={spec} />
       </div>
     </div>
   );

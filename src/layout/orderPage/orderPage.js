@@ -1,6 +1,7 @@
 import React, { useContext, useState, Fragment } from "react";
 import "./orderPage.scss";
 import Hero from "../../components/Hero/Hero";
+import { Link } from "react-router-dom";
 import { FlybusContext } from "../../context/context";
 import Corporate from "../../img/corporate.png";
 import Modal from "../../components/Modal/Modal";
@@ -35,7 +36,19 @@ const OrderPage = () => {
     return (
       <Fragment key={item.id}>
         <li id={item.id} className="catalogue-item">
-          <div className="catalogue-item__name">{item.name}</div>{" "}
+          <div className="catalogue-item__name">
+            <Link
+              to={`/${
+                item.type === "civilian" ? "commercial" : "defense"
+              }/${item.name.toUpperCase()}`}
+            >
+              {item.name}
+              <i
+                className="fas fa-eye"
+                style={{ marginLeft: "2rem", color: "lightGrey" }}
+              ></i>
+            </Link>
+          </div>{" "}
           <div className="catalogue-item__image">
             <img
               src={item.img}

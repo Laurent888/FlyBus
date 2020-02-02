@@ -5,7 +5,7 @@ import "./AircraftCard.scss";
 const AircraftCard = props => {
   console.log(props.match);
   return (
-    <Link to={`${props.match.url}/${props.title}`}>
+    <Link to={`${props.match.path}/${props.title}`}>
       <div className="card">
         <div>
           <img

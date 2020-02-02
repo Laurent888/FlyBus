@@ -23,11 +23,13 @@ class FlybusProvider extends Component {
 
   componentDidMount = () => {
     this.setState({ loading: true });
+    console.log(this.state.loading);
     const tempArticles = [...data.articles];
     const tempAircraft = [...data.aircraft];
     const tempHomeDes = [...data.homepage];
     const tempDefense = [...data.defense];
     const tempSpace = [...data.space];
+    console.log(tempArticles);
 
     // Define the Allprice array
     const aircraftPrice = tempAircraft.map(item => {

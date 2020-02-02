@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .backdrop {
   position: absolute;
   top: 0;
@@ -32,6 +34,19 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-width) {
+      position: fixed;
+      left: 0;
+      top: 5rem;
+      width: 100vw;
+      height: 90%;
+      overflow: scroll;
+
+      &__content {
+        padding: 1rem;
       }
     }
   }

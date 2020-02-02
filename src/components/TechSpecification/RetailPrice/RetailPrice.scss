@@ -1,0 +1,27 @@
+@import "../../../variables";
+
+.price {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+
+  h5 {
+    color: $primary-color;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 2rem;
+    font-weight: 300;
+    color: $primary-color;
+    line-height: 0;
+  }
+}
+
+@media screen and (max-width: $breakpoint-width) {
+  .retail-price {
+    width: 100%;
+  }
+}

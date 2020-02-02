@@ -59,4 +59,10 @@
       }
     }
   }
+  @media screen and (max-width: $breakpoint-width) {
+    button {
+      padding: 0.8rem 1.7rem;
+      font-size: 1.3rem;
+    }
+  }
 }
