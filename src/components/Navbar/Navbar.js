@@ -10,7 +10,14 @@ const Navbar = () => {
     <div className="navbar">
       <div className="row">
         <Logo />
-        <ul className={`navlist ${menuOpen ? "show" : null}`}>
+        <ul
+          className={`navlist ${menuOpen ? "show" : null}`}
+          onClick={() => {
+            if (menuOpen) {
+              handleMenuToggle();
+            }
+          }}
+        >
           <li>
             <Link to="/commercial">Commercial</Link>
           </li>
