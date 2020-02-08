@@ -94,6 +94,11 @@
     justify-content: space-between;
     align-items: center;
 
+    @media screen and (max-width: $breakpoint-width) {
+      flex-direction: column;
+      justify-content: center;
+    }
+
     &__value {
       font-weight: 400;
     }
@@ -116,6 +121,7 @@
   }
 
   @media screen and (max-width: $breakpoint-width) {
+    margin-top: 1rem;
     flex-direction: column;
     align-items: center;
   }

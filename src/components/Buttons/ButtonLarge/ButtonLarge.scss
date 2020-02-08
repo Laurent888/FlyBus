@@ -11,6 +11,10 @@
     text-transform: uppercase;
     outline: none;
     margin: 2rem;
+
+    @media screen and (max-width: $breakpoint-width) {
+      margin: 1rem;
+    }
   }
   &.danger {
     button {
