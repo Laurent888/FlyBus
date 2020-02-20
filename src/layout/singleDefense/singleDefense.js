@@ -14,7 +14,6 @@ const SingleDefense = props => {
   }
 
   const defenseSlug = props.match.params.defense.toUpperCase();
-  console.log(props.match);
 
   const defenseData = defense[1].products.filter(item => {
     return defenseSlug === item.name;

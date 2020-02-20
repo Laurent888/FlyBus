@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { FlybusContext } from "../../context/context";
 import "./DescriptionSection.scss";
+import PropTypes from "prop-types";
 
 // This component needs : content.title & content.content
 
@@ -18,3 +19,7 @@ const DescriptionSection = props => {
 };
 
 export default DescriptionSection;
+
+DescriptionSection.propTypes = {
+  content: PropTypes.object.isRequired
+};

@@ -17,5 +17,5 @@ Flybus industry is the website of a virtual aeronautical company.
 
 ## Notes
 
-Data relatated to the apartments such as description or prices are in a **data.js** file stored locally.
+Data relatated to the products such as description or prices are in a **data.js** file stored locally.
 Photos are from Airbus and Boeing.

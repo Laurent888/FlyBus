@@ -1,16 +1,18 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import "./AircraftCard.scss";
+import PropTypes from "prop-types";
 
 const AircraftCard = props => {
-  console.log(props.match);
+  const { match, title, src } = props;
+
   return (
-    <Link to={`${props.match.path}/${props.title}`}>
+    <Link to={`${match.path}/${title}`}>
       <div className="card">
         <div>
           <img
-            src={props.src}
-            alt={props.title}
+            src={src}
+            alt={title}
             style={{
               height: "100%",
               width: "100%",
@@ -19,10 +21,16 @@ const AircraftCard = props => {
             }}
           />
         </div>
-        <h3 className="card-heading">{props.title}</h3>
+        <h3 className="card-heading">{title}</h3>
       </div>
     </Link>
   );
 };
 
 export default withRouter(AircraftCard);
+
+AircraftCard.propTypes = {
+  match: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired
+};

@@ -1,6 +1,7 @@
 import React from "react";
 import "./FullPageHero.scss";
 import ButtonTransparentLg from "../Buttons/ButtonTransparentLg/ButtonTransparentLg";
+import PropTypes from "prop-types";
 
 const FullPageHero = props => {
   return (
@@ -29,3 +30,11 @@ const FullPageHero = props => {
 };
 
 export default FullPageHero;
+
+FullPageHero.propTypes = {
+  button: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired
+};

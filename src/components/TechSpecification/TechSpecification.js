@@ -1,6 +1,7 @@
 import React from "react";
 import "./TechSpecification.scss";
 import RetailPrice from "./RetailPrice/RetailPrice";
+import PropTypes from "prop-types";
 
 const TechSpecification = props => {
   const spec = props.spec;
@@ -35,3 +36,7 @@ const TechSpecification = props => {
 };
 
 export default TechSpecification;
+
+TechSpecification.propTypes = {
+  spec: PropTypes.object.isRequired
+};

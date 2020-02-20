@@ -1,5 +1,6 @@
 import React from "react";
 import "./OrderArticleButton.scss";
+import PropTypes from "prop-types";
 
 const OrderArticleButton = props => {
   const id = props.id;
@@ -13,3 +14,7 @@ const OrderArticleButton = props => {
 };
 
 export default OrderArticleButton;
+
+OrderArticleButton.propTypes = {
+  id: PropTypes.string.isRequired
+};

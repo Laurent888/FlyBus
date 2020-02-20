@@ -1,5 +1,6 @@
 import React from "react";
 import "./Hero.scss";
+import PropTypes from "prop-types";
 
 // This component need : title, src
 
@@ -25,3 +26,8 @@ const Hero = props => {
 };
 
 export default Hero;
+
+Hero.propTypes = {
+  src: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
+};

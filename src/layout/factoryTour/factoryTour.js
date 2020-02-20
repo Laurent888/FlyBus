@@ -7,7 +7,6 @@ const FactoryTour = () => {
   const { articles, loading } = useContext(FlybusContext);
 
   if (loading) {
-    console.log("loading");
     return <p>Loading</p>;
   }
 

@@ -1,6 +1,7 @@
 import React from "react";
 import "./ArticleHighlight.scss";
 import ButtonTransparent from "../Buttons/ButtonTransparent/ButtonTransparent";
+import PropTypes from "prop-types";
 
 const ArticleHighlight = props => {
   return (
@@ -25,3 +26,9 @@ const ArticleHighlight = props => {
 };
 
 export default ArticleHighlight;
+
+ArticleHighlight.propTypes = {
+  image: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
+};

@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
 import "./aircraftGrid.scss";
 import AircraftCard from "../../components/Card/AircraftCard/AircraftCard";
+import PropTypes from "prop-types";
 
-const aircraftGrid = props => {
+const AircraftGrid = props => {
   return (
     <div className="section-dark">
       <h2 className="row m-heading">Current Products</h2>
@@ -17,4 +18,8 @@ const aircraftGrid = props => {
   );
 };
 
-export default aircraftGrid;
+export default AircraftGrid;
+
+AircraftGrid.propTypes = {
+  aircraft: PropTypes.array.isRequired
+};

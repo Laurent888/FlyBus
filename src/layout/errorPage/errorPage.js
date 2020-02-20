@@ -2,13 +2,13 @@ import React from "react";
 import "./errorPage.scss";
 import { Link } from "react-router-dom";
 
-const errorPage = () => {
+const ErrorPage = () => {
   return (
-    <div>
+    <div className="errorPage">
       <h3>The page you are looking is not found</h3>
       <Link to="/">Back to homepage</Link>
     </div>
   );
 };
 
-export default errorPage;
+export default ErrorPage;

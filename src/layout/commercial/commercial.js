@@ -13,7 +13,6 @@ const Homepage = () => {
   }
 
   const flybusPresentation = homepageDescription[0].description1;
-  console.log(flybusPresentation);
   return (
     <div>
       <Hero src={HeroImg} title="Commercial Aircraft" />

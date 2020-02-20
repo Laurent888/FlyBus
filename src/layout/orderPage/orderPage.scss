@@ -53,6 +53,7 @@
       padding-left: 3rem;
       @media screen and (max-width: $breakpoint-width) {
         padding-left: 1rem;
+        margin: 1rem 0;
       }
 
       a {
@@ -83,7 +84,8 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(60px, 150px));
       justify-content: space-between;
-      padding: 0 1rem;
+      align-items: center;
+      padding: 1rem 1rem;
     }
   }
 
