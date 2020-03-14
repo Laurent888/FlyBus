@@ -16,7 +16,7 @@ const Hero = props => {
           bgImageAlt="place background"
           strength={400}
         >
-          <div style={{ height: "45rem" }} />
+          <div className="parallax-content" />
         </Parallax>
         {/* <img
           src={props.src}

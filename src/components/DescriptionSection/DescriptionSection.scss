@@ -10,13 +10,15 @@
   @media screen and (max-width: $breakpoint-width) {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     h3 {
       text-align: center;
+      padding: 0 2rem;
     }
 
     p {
-      text-align: center;
+      text-align: left;
+      padding: 0 2rem;
     }
   }
 }
