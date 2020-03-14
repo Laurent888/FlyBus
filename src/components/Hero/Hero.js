@@ -8,12 +8,12 @@ const Hero = props => {
   return (
     <div className="hero">
       <div className="hero-container">
-        <div></div>
+        <div className="overlay"></div>
         <img
           src={props.src}
           alt="hero"
           style={{ height: "100%", width: "100%", objectFit: "cover" }}
-        ></img>
+        />
       </div>
       <div className="row">
         <div className="row-container">

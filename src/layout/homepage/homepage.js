@@ -4,6 +4,7 @@ import Hero from "../../components/Hero/Hero";
 import duskHero from "../../img/dusk-hero.jpg";
 import DescriptinSection from "../../components/DescriptionSection/DescriptionSection";
 import ArticleHighlightSection from "../../layout/articleHighlightSection/articleHighlightSection";
+import SectionHeader from "../../components/SectionHeader/SectionHeader";
 
 const Homepage = () => {
   const { homepageDescription, loading } = useContext(FlybusContext);
@@ -17,6 +18,7 @@ const Homepage = () => {
     <div>
       <Hero src={duskHero} title="Flybus: Beyond Limits" />
       <DescriptinSection content={flybusPresentation} />
+      <SectionHeader />
       <ArticleHighlightSection />
     </div>
   );
