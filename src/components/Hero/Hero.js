@@ -2,6 +2,8 @@ import React from "react";
 import "./Hero.scss";
 import PropTypes from "prop-types";
 
+import { Parallax } from "react-parallax";
+
 // This component need : title, src
 
 const Hero = props => {
@@ -9,11 +11,18 @@ const Hero = props => {
     <div className="hero">
       <div className="hero-container">
         <div className="overlay"></div>
-        <img
+        <Parallax
+          bgImage={props.src}
+          bgImageAlt="place background"
+          strength={400}
+        >
+          <div style={{ height: "45rem" }} />
+        </Parallax>
+        {/* <img
           src={props.src}
           alt="hero"
           style={{ height: "100%", width: "100%", objectFit: "cover" }}
-        />
+        /> */}
       </div>
       <div className="row">
         <div className="row-container">
@@ -21,6 +30,7 @@ const Hero = props => {
           <h2 className="hero-heading">{props.title}</h2>
         </div>
       </div>
+      <div className="fade"></div>
     </div>
   );
 };

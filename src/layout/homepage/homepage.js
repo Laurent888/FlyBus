@@ -13,9 +13,13 @@ const Homepage = () => {
     return <p>Loading page...</p>;
   }
 
+  const handleScroll = e => {
+    console.log(e.target);
+  };
+
   const flybusPresentation = homepageDescription[1].description2;
   return (
-    <div>
+    <div onScroll={handleScroll}>
       <Hero src={duskHero} title="Flybus: Beyond Limits" />
       <DescriptinSection content={flybusPresentation} />
       <SectionHeader />
