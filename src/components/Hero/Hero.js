@@ -30,7 +30,6 @@ const Hero = props => {
           <h2 className="hero-heading">{props.title}</h2>
         </div>
       </div>
-      <div className="fade"></div>
     </div>
   );
 };

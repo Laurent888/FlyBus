@@ -10,20 +10,16 @@ const SectionHeader = () => {
   return (
     <section className="SectionHeader">
       <div className="section-left">
-        <div className="link-container">
-          <Link to="/commercial">
-            <h5 className="SectionHeader-title">Commercial Products</h5>
-            <img src={commercial} alt="commercial page" />
-          </Link>
-        </div>
+        <Link to="/commercial" className="link-container">
+          <h5 className="SectionHeader-title">Commercial Products</h5>
+          <img src={commercial} alt="commercial page" />
+        </Link>
       </div>
       <div className="section-right">
-        <div className="link-container">
-          <Link to="/military">
-            <h5 className="SectionHeader-title">Military Products</h5>
-            <img src={military} alt="military page" />
-          </Link>
-        </div>
+        <Link to="/defense" className="link-container">
+          <h5 className="SectionHeader-title">Military Products</h5>
+          <img src={military} alt="military page" />
+        </Link>
       </div>
     </section>
   );
