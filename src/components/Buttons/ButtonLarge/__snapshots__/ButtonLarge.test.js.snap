@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Large should render button large 1`] = `
+<div
+  className="btn-large btnPrimary"
+>
+  <button
+    onClick={[Function]}
+  >
+    test
+  </button>
+</div>
+`;
