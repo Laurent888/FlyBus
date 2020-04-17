@@ -1,28 +1,25 @@
-import React, { Component, createContext, Fragment } from "react";
+import React, { useEffect, useState, createContext, Fragment } from "react";
 import data from "../data";
 
 const FlybusContext = createContext();
 
-class FlybusProvider extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      articles: [],
-      aircraft: [],
-      allPrice: [],
-      onlyPrice: [],
-      homepageDescription: [],
-      defense: [],
-      space: [],
-      loading: true,
-      selectedArticles: [],
-      totalPrice: 0,
-      menuOpen: false
-    };
-  }
+const FlybusProvider = (props) => {
+  const [loading, setLoading] = useState(true);
+  const [selectedArticles, setSelectedArticles] = useState([]);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [state, setState] = useState({
+    articles: [],
+    aircraft: [],
+    allPrice: [],
+    onlyPrice: [],
+    homepageDescription: [],
+    defense: [],
+    space: [],
+    totalPrice: 0,
+  });
 
-  componentDidMount = () => {
-    this.setState({ loading: true });
+  useEffect(() => {
+    setLoading(true);
     const tempArticles = [...data.articles];
     const tempAircraft = [...data.aircraft];
     const tempHomeDes = [...data.homepage];
@@ -30,7 +27,7 @@ class FlybusProvider extends Component {
     const tempSpace = [...data.space];
 
     // Define the Allprice array
-    const aircraftPrice = tempAircraft.map(item => {
+    const aircraftPrice = tempAircraft.map((item) => {
       const id = item.id;
       const name = item.name;
       const price = item.singlePage.specification.price;
@@ -41,12 +38,12 @@ class FlybusProvider extends Component {
         img,
         price,
         type: "civilian",
-        quantity: 0
+        quantity: 0,
       };
       return itemData;
     });
 
-    const defensePrice = tempDefense[1].products.map(item => {
+    const defensePrice = tempDefense[1].products.map((item) => {
       const id = item.id;
       const name = item.name;
       const price = item.singlePage.specification.price;
@@ -57,7 +54,7 @@ class FlybusProvider extends Component {
         img,
         price,
         quantity: 0,
-        type: "military"
+        type: "military",
       };
       return itemData;
     });
@@ -65,7 +62,8 @@ class FlybusProvider extends Component {
     const allPrice = [...aircraftPrice, ...defensePrice];
     let onlyPrice = [...allPrice];
 
-    this.setState({
+    setState((state) => ({
+      ...state,
       articles: tempArticles,
       aircraft: tempAircraft,
       homepageDescription: tempHomeDes,
@@ -73,12 +71,16 @@ class FlybusProvider extends Component {
       space: tempSpace,
       allPrice,
       onlyPrice,
-      loading: false
-    });
-  };
+    }));
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    calculateTotalPrice();
+  }, [selectedArticles]);
 
   // Function used to make line breaks in text descriptions
-  addLineBreak = string =>
+  const addLineBreak = (string) =>
     string.split("<br />").map((item, i) => (
       <Fragment key={`${item}-${i}`}>
         {item}
@@ -88,49 +90,52 @@ class FlybusProvider extends Component {
     ));
 
   // To toggle the menu hamburger in mobile mode
-  handleMenuToggle = () => {
-    this.setState({
-      menuOpen: !this.state.menuOpen
-    });
+  const handleMenuToggle = () => {
+    setMenuOpen((prev) => !prev);
   };
 
   // Function to calculate the total price of order
-  calculateTotalPrice = () => {
-    const selectedArticles = [...this.state.selectedArticles];
-    const totalPrice = selectedArticles.reduce((acc, val) => {
+  const calculateTotalPrice = () => {
+    const selectedArticlesTemp = [...selectedArticles];
+    const totalPrice = selectedArticlesTemp.reduce((acc, val) => {
       return acc + parseInt(val.price);
     }, 0);
-    this.setState({
-      totalPrice
-    });
+    setState((state) => ({
+      ...state,
+      totalPrice,
+    }));
   };
 
   // Method to add or remove an article
-  orderClicked = (e, id) => {
-    let filteredItem = this.state.onlyPrice.filter(item => id === item.id)[0];
+  const orderClicked = (e, id) => {
+    let filteredItem = state.onlyPrice.filter((item) => id === item.id)[0];
+
     let tempFilteredItem = { ...filteredItem };
-    let selectedArticles = this.state.selectedArticles;
-    let tempSelectedArticles = [...selectedArticles];
-    let onlyPrice = this.state.onlyPrice.filter(item => item.id !== id);
+
+    let selectedArticlesTemp = selectedArticles;
+
+    let tempSelectedArticles = [...selectedArticlesTemp];
+
+    let onlyPrice = state.onlyPrice.filter((item) => item.id !== id);
 
     // Conditional on the type of order button: plus or minus
     if (e.target.textContent === "+") {
       let tempAllPrice = [
         ...onlyPrice,
-        { ...tempFilteredItem, quantity: tempFilteredItem.quantity + 1 }
+        { ...tempFilteredItem, quantity: tempFilteredItem.quantity + 1 },
       ];
-      this.setState(
-        state => {
-          return {
-            onlyPrice: [...tempAllPrice],
-            selectedArticles: [...state.selectedArticles, tempFilteredItem]
-          };
-        },
-        () => this.calculateTotalPrice()
-      );
+
+      setSelectedArticles((state) => [...state, tempFilteredItem]);
+
+      setState((state) => {
+        return {
+          ...state,
+          onlyPrice: [...tempAllPrice],
+        };
+      });
     } else if (e.target.textContent === "-") {
       // Will find if the target article cunter is already at 0
-      const foundItem = tempSelectedArticles.find(item => id === item.id);
+      const foundItem = tempSelectedArticles.find((item) => id === item.id);
       // Remove one item from the state.selectedArticles if it exists otherwise do nothing so quantity dont become negative
       if (foundItem) {
         const foundIndex = tempSelectedArticles.indexOf(foundItem);
@@ -138,15 +143,13 @@ class FlybusProvider extends Component {
 
         let tempAllPrice = [
           ...onlyPrice,
-          { ...tempFilteredItem, quantity: tempFilteredItem.quantity - 1 }
+          { ...tempFilteredItem, quantity: tempFilteredItem.quantity - 1 },
         ];
-        this.setState(
-          {
-            onlyPrice: [...tempAllPrice],
-            selectedArticles: tempSelectedArticles
-          },
-          () => this.calculateTotalPrice()
-        );
+        setSelectedArticles(tempSelectedArticles);
+        setState((state) => ({
+          ...state,
+          onlyPrice: [...tempAllPrice],
+        }));
       }
       return;
     }
@@ -154,42 +157,43 @@ class FlybusProvider extends Component {
   };
 
   // Reset SelectedArticles and quantity
-  resetAll = () => {
-    this.setState({
-      loading: true
-    });
+  const resetAll = () => {
+    setLoading(true);
 
-    const onlyPrice = this.state.onlyPrice;
+    const onlyPrice = state.onlyPrice;
     const tempOnlyPrice = [...onlyPrice];
 
-    const resetQtyArray = tempOnlyPrice.map(item => ({
+    const resetQtyArray = tempOnlyPrice.map((item) => ({
       ...item,
-      quantity: 0
+      quantity: 0,
     }));
 
-    this.setState({
+    setState((state) => ({
+      ...state,
       onlyPrice: resetQtyArray,
-      selectedArticles: [],
       totalPrice: 0,
-      loading: false
-    });
+    }));
+    setSelectedArticles([]);
+
+    setLoading(false);
   };
 
-  render() {
-    return (
-      <FlybusContext.Provider
-        value={{
-          ...this.state,
-          addLineBreak: this.addLineBreak,
-          handleMenuToggle: this.handleMenuToggle,
-          orderClicked: this.orderClicked,
-          resetAll: this.resetAll
-        }}
-      >
-        {this.props.children}
-      </FlybusContext.Provider>
-    );
-  }
-}
+  return (
+    <FlybusContext.Provider
+      value={{
+        ...state,
+        selectedArticles,
+        loading,
+        menuOpen,
+        addLineBreak,
+        handleMenuToggle,
+        orderClicked,
+        resetAll,
+      }}
+    >
+      {props.children}
+    </FlybusContext.Provider>
+  );
+};
 
 export { FlybusProvider, FlybusContext };
