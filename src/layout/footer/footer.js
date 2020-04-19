@@ -1,22 +1,25 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
+
+import { FlybusContext } from "../../context/context";
 import "./footer.scss";
-// import { Link } from "react-router-dom";
 import Logo from "../../components/Logo/Logo";
 import data from "../../data";
 import FooterCredit from "../../components/FooterCredit/FooterCredit";
 
-const footer = () => {
-  const renderedUtilities = data.footer.utilities.map(utility => (
+const Footer = () => {
+  const { isDarkTheme } = useContext(FlybusContext);
+
+  const renderedUtilities = data.footer.utilities.map((utility) => (
     <Fragment key={utility}>
       <p>{utility}</p>
     </Fragment>
   ));
-  const renderedCategories = data.footer.categories.map(category => (
+  const renderedCategories = data.footer.categories.map((category) => (
     <Fragment key={category}>
       <p>{category}</p>
     </Fragment>
   ));
-  const renderedPopular = data.footer.popular.map(popular => (
+  const renderedPopular = data.footer.popular.map((popular) => (
     <Fragment key={popular}>
       <p>{popular}</p>
     </Fragment>
@@ -24,10 +27,10 @@ const footer = () => {
 
   return (
     <Fragment>
-      <div className="section">
+      <div className={`section ${isDarkTheme && "darkThemeLight"}`}>
         <div className="footer row">
           <div className="logo">
-            <Logo />
+            <Logo darkTheme={isDarkTheme} />
           </div>
 
           <div className="footer-item">
@@ -50,9 +53,9 @@ const footer = () => {
           </div>
         </div>
       </div>
-      <FooterCredit />
+      <FooterCredit isDarkTheme={isDarkTheme} />
     </Fragment>
   );
 };
 
-export default footer;
+export default Footer;

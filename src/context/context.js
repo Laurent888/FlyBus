@@ -5,6 +5,7 @@ const FlybusContext = createContext();
 
 const FlybusProvider = (props) => {
   const [loading, setLoading] = useState(true);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [selectedArticles, setSelectedArticles] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [state, setState] = useState({
@@ -178,6 +179,10 @@ const FlybusProvider = (props) => {
     setLoading(false);
   };
 
+  const setDarkTheme = (state) => {
+    setIsDarkTheme(state);
+  };
+
   return (
     <FlybusContext.Provider
       value={{
@@ -189,6 +194,8 @@ const FlybusProvider = (props) => {
         handleMenuToggle,
         orderClicked,
         resetAll,
+        isDarkTheme,
+        setDarkTheme,
       }}
     >
       {props.children}

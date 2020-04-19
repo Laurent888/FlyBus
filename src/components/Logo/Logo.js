@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Logo.scss";
 
-const Logo = () => {
+const Logo = ({ darkTheme }) => {
   return (
-    <Link to="/" className="logo">
+    <Link to="/" className={`logo ${darkTheme && "darkTheme"}`}>
       FlyBus
     </Link>
   );

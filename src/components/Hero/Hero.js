@@ -6,7 +6,7 @@ import { Parallax } from "react-parallax";
 
 // This component need : title, src
 
-const Hero = props => {
+const Hero = (props) => {
   return (
     <div className="hero">
       <div className="hero-container">
@@ -14,7 +14,7 @@ const Hero = props => {
         <Parallax
           bgImage={props.src}
           bgImageAlt="place background"
-          strength={400}
+          strength={600}
         >
           <div className="parallax-content" />
         </Parallax>
@@ -38,5 +38,5 @@ export default Hero;
 
 Hero.propTypes = {
   src: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };

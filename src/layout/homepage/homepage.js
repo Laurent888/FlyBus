@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+
 import { FlybusContext } from "../../context/context";
 import Hero from "../../components/Hero/Hero";
 import duskHero from "../../img/dusk-hero.jpg";
@@ -13,7 +14,7 @@ const Homepage = () => {
     return <p>Loading page...</p>;
   }
 
-  const handleScroll = e => {
+  const handleScroll = (e) => {
     console.log(e.target);
   };
 

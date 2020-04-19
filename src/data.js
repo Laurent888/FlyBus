@@ -24,6 +24,10 @@ import tigerSingle from "./img/tiger-family.jpg";
 import a330mrttSingle from "./img/a330mrtt-family.jpg";
 import a400mSingle from "./img/a400m-family.jpg";
 import duskHero from "./img/dusk-hero.jpg";
+import sat1 from "./img/sat1.jpg";
+import sat2 from "./img/sat2.jpg";
+import launcher1 from "./img/launcher1.jpg";
+import launcher2 from "./img/launcher2.jpg";
 
 export default {
   aircraft: [
@@ -276,6 +280,74 @@ export default {
         content:
           "With experience gained from supporting every major U.S. endeavor to escape Earth’s gravity, we’re designing and building the future of safe, assured space exploration and commercial access – even as we lead the digital transition of the satellite industry for both government and commercial customers around the globe. <br /> We’re enabling critical research on the International Space Station (ISS) that benefits the future space economy, deep-space exploration and life on Earth; returning crew launch capabilities to U.S. soil with the CST-100 Starliner commercial spacecraft; ensuring successful delivery to Earth’s orbit with the United Launch Alliance (ULA) joint venture between Behring and Lockheed Martin; and building heavy-lift, human-rated propulsion to deep space with the Space Launch System (SLS) rocket that will launch missions on a path to the Gateway cislunar outpost, the moon’s surface and Mars. Behring-built Tracking and Data Relay Satellites (TDRS) provide high-bandwidth communications between Earth-orbiting spacecraft and facilities on the ground.",
       },
+    },
+    {
+      products: [
+        {
+          id: "space1",
+          name: "NEOSSAT",
+          image: sat1,
+          singlePage: {
+            description: {
+              title: "Satellite Telecommunication missions and applications",
+              content:
+                "A product of choice with major operators worldwide, the Eurostar series of high performance communications satellites is suited to all communications missions, is compatible with the whole range of launch vehicles and is the benchmark in the industry for in-orbit reliability.",
+              image: sat1,
+            },
+            specification: {
+              price: 152,
+            },
+          },
+        },
+        {
+          id: "space2",
+          name: "PROBA-V",
+          image: sat2,
+          singlePage: {
+            description: {
+              title: "Highest flexibility and enhanced payload accommodation",
+              content:
+                "A communications satellite works like a relay station: signals transmitted by the ground stations are picked up by the satellite’s receiver antennas, the signals are filtered, their frequency changed and amplified, and then routed via the transmit antennas back down to Earth.",
+              image: sat2,
+            },
+            specification: {
+              price: 170,
+            },
+          },
+        },
+        {
+          id: "space3",
+          name: "HISAKI",
+          image: launcher1,
+          singlePage: {
+            description: {
+              title: "Building the Future of Human Spaceflight Beyond Earth",
+              content:
+                "NASA's Space Launch System (SLS) provides a critical heavy-lift capability built to rigorous human-rated safety standards to carry people and cargo back to the moon – this time to stay – and on to Mars.SLS will launch larger payloads farther in our solar system, faster than ever before possible. It will be the most powerful rocket ever built, enabling diverse exploration, science and security missions. SLS is also the world’s only super heavy rocket capable of safely transporting astronauts to deep space with major payloads like landers, habitats and Gateway elements.",
+              image: launcher1,
+            },
+            specification: {
+              price: 420,
+            },
+          },
+        },
+        {
+          id: "space4",
+          name: "DSCOVR",
+          image: launcher2,
+          singlePage: {
+            description: {
+              title: "A 21st Century Space Launcher",
+              content:
+                "In its first four variants, our Ariane put half of the world’s commercial satellites into orbit. Ariane 5 has achieved over 100 launches. And we do not stop there: the 50% Airbus subsidiary ArianeGroup, created in 2015, brings together combined technology expertise and offers innovative, highly competitive solutions for civil and military launch vehicles and space applications. The goal of ArianeGroup is to provide comprehensive, advantageous solutions in this increasingly competitive market, based on a family of versatile, high-performance, cost-competitive launchers that meet the needs of both government and commercial customers. ",
+              image: launcher2,
+            },
+            specification: {
+              price: 314,
+            },
+          },
+        },
+      ],
     },
   ],
   articles: [

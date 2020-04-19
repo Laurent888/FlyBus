@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
-import { FlybusContext } from "../../context/context";
+
 import "./defensePage.scss";
+
+import { FlybusContext } from "../../context/context";
 import Hero from "../../components/Hero/Hero";
 import DescriptionSection from "../../components/DescriptionSection/DescriptionSection";
 import AircreftGrid from "../aircraftGrid/aircraftGrid";

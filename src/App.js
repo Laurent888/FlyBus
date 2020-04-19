@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
+import { withRouter } from "react-router-dom";
+import { FlybusContext } from "./context/context";
+
 import "./App.scss";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./layout/footer/footer";
@@ -13,10 +16,19 @@ import FactoryTour from "./layout/factoryTour/factoryTour";
 import MarketOutlook from "./layout/marletOutlook/marketOutlook";
 import ScrollToTop from "./components/scrollToTop";
 import OrderPage from "./layout/orderPage/orderPage";
+import SingleSpace from "./layout/singleSpace/singleSpace";
 
-function App() {
+function App(props) {
+  const { setDarkTheme } = useContext(FlybusContext);
+
+  if (props.location.pathname.includes("/space")) {
+    setDarkTheme(true);
+  } else {
+    setDarkTheme(false);
+  }
+
   return (
-    <div className="App">
+    <div>
       <Navbar />
       <ScrollToTop />
       <Switch>
@@ -28,6 +40,7 @@ function App() {
         <Route exact path="/market-outlook" component={MarketOutlook} />
         <Route exact path="/commercial/:aircraft" component={SingleAircraft} />
         <Route exact path="/defense/:defense" component={SingleDefense} />
+        <Route exact path="/space/:space" component={SingleSpace} />
         <Route exact path="/order" component={OrderPage} />
       </Switch>
       <Footer />
@@ -35,4 +48,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);

@@ -32,6 +32,17 @@ h5 {
   margin: 0;
 }
 
+.m-heading {
+  font-size: 5rem;
+  font-weight: 200;
+  color: $primary-color;
+}
+.s-heading {
+  font-size: 3rem;
+  font-weight: 200;
+  color: $primary-color;
+}
+
 .section-light {
   padding: 4rem 0;
   background-color: #fff;
@@ -51,22 +62,27 @@ h5 {
   );
 
   padding: 5rem 0;
+
+  &.darkTheme,
+  &.darkThemeLight {
+    background: $background-dark;
+
+    .m-heading,
+    .s-heading,
+    p,
+    li {
+      color: $white-color;
+    }
+  }
+
+  &.darkThemeLight {
+    background: $background-dark-light;
+  }
 }
 
 .row {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.m-heading {
-  font-size: 5rem;
-  font-weight: 200;
-  color: $primary-color;
-}
-.s-heading {
-  font-size: 3rem;
-  font-weight: 200;
-  color: $primary-color;
 }
 
 .my-1 {

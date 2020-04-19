@@ -5,11 +5,11 @@ import PropTypes from "prop-types";
 
 // This component needs : content.title & content.content
 
-const DescriptionSection = props => {
-  const { addLineBreak } = useContext(FlybusContext);
+const DescriptionSection = (props) => {
+  const { addLineBreak, isDarkTheme } = useContext(FlybusContext);
 
   return (
-    <section className="section">
+    <section className={`section ${isDarkTheme && "darkTheme"}`}>
       <div className="row descriptionSection">
         <h3 className="m-heading">{props.content.title}</h3>
         <p>{addLineBreak(props.content.content)}</p>
@@ -21,5 +21,5 @@ const DescriptionSection = props => {
 export default DescriptionSection;
 
 DescriptionSection.propTypes = {
-  content: PropTypes.object.isRequired
+  content: PropTypes.object.isRequired,
 };

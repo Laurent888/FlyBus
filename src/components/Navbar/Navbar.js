@@ -5,11 +5,12 @@ import Logo from "../Logo/Logo";
 import { FlybusContext } from "../../context/context";
 
 const Navbar = () => {
-  const { handleMenuToggle, menuOpen } = useContext(FlybusContext);
+  const { handleMenuToggle, menuOpen, isDarkTheme } = useContext(FlybusContext);
+
   return (
-    <div className="navbar">
+    <div className={`navbar ${isDarkTheme && "darkTheme"}`}>
       <div className="row">
-        <Logo />
+        <Logo darkTheme={isDarkTheme} />
         <ul
           className={`navlist ${menuOpen ? "show" : null}`}
           onClick={() => {

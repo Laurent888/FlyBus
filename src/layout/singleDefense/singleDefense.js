@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+
 import "./singleDefense.scss";
 import { FlybusContext } from "../../context/context";
 import Hero from "../../components/Hero/Hero";
@@ -6,7 +7,7 @@ import DescriptionSection from "../../components/DescriptionSection/DescriptionS
 import ErrorPage from "../errorPage/errorPage";
 import RetailPrice from "../../components/TechSpecification/RetailPrice/RetailPrice";
 
-const SingleDefense = props => {
+const SingleDefense = (props) => {
   const { defense, loading } = useContext(FlybusContext);
 
   if (loading) {
@@ -15,7 +16,7 @@ const SingleDefense = props => {
 
   const defenseSlug = props.match.params.defense.toUpperCase();
 
-  const defenseData = defense[1].products.filter(item => {
+  const defenseData = defense[1].products.filter((item) => {
     return defenseSlug === item.name;
   });
   if (defenseData.length === 0) {
