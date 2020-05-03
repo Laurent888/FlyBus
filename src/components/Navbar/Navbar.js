@@ -36,7 +36,9 @@ const Navbar = () => {
           </li>
         </ul>
         <div
-          className={`hamburger-menu ${menuOpen ? "open" : null}`}
+          className={`hamburger-menu ${menuOpen ? "open" : null} ${
+            isDarkTheme && "darkTheme"
+          }`}
           onClick={handleMenuToggle}
         >
           <div></div>

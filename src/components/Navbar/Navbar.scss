@@ -59,83 +59,93 @@
       }
     }
   }
-}
 
-.hamburger-menu {
-  display: none;
-  padding: 1rem;
-  cursor: pointer;
-  align-content: center;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
-
-  > div {
-    position: relative;
-    height: 2px;
-    width: 3rem;
-    background-color: $primary-color;
-    display: flex;
-    align-items: center;
+  .hamburger-menu {
+    display: none;
+    padding: 1rem;
+    cursor: pointer;
+    align-content: center;
     justify-content: center;
-  }
+    transition: all 0.2s ease-in-out;
 
-  > div::before,
-  > div::after {
-    content: "";
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    background-color: $primary-color;
-  }
+    > div {
+      position: relative;
+      height: 2px;
+      width: 3rem;
+      background-color: $primary-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-  > div::before {
-    transform: translateY(-10px);
-  }
-  > div::after {
-    transform: translateY(10px);
-  }
-
-  &.open {
-    transform: rotate(45deg);
+    > div::before,
+    > div::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background-color: $primary-color;
+    }
 
     > div::before {
-      opacity: 0;
+      transform: translateY(-10px);
     }
-
     > div::after {
-      transform: rotate(-90deg);
+      transform: translateY(10px);
     }
-  }
-}
 
-@media screen and (max-width: "600px") {
-  .navlist {
-    display: none;
+    &.open {
+      transform: rotate(45deg);
 
-    &.show {
-      position: absolute;
-      top: 6rem;
-      right: 0;
-      background-color: rgba(142, 183, 238, 0.95);
-      border-radius: 0 0 0 5px;
-      display: flex;
-      flex-direction: column;
-      width: 300px;
-      align-items: flex-start;
+      > div::before {
+        opacity: 0;
+      }
 
-      a {
-        font-size: 2rem;
-        color: #fff;
+      > div::after {
+        transform: rotate(-90deg);
+      }
+    }
 
-        &:hover {
-          color: $primary-color;
-          border-bottom: none;
-        }
+    &.darkTheme {
+      > div {
+        background-color: #fff;
+      }
+      > div::before,
+      > div::after {
+        background-color: #fff;
       }
     }
   }
 
-  .hamburger-menu {
-    display: flex;
+  @media screen and (max-width: "600px") {
+    .navlist {
+      display: none;
+
+      &.show {
+        position: absolute;
+        top: 6rem;
+        right: 0;
+        background-color: rgba(142, 183, 238, 0.95);
+        border-radius: 0 0 0 5px;
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        align-items: flex-start;
+
+        a {
+          font-size: 2rem;
+          color: #fff;
+
+          &:hover {
+            color: $primary-color;
+            border-bottom: none;
+          }
+        }
+      }
+    }
+
+    .hamburger-menu {
+      display: flex;
+    }
   }
 }
