@@ -10,7 +10,7 @@ import {
 import "@testing-library/jest-dom/extend-expect";
 import { FlybusContext, FlybusProvider } from "../../context/context";
 
-import OrderPage from "./orderPage";
+import OrderPage from "../orderPage/orderPage";
 
 describe("Order page", () => {
   const resetAll = jest.fn();

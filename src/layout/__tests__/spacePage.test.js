@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { render, screen, prettyDOM } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 import { FlybusContext } from "../../context/context";
 
-import SpacePage from "./spacePage";
+import SpacePage from "../spacePage/spacePage";
 
 describe("Space Page", () => {
   const contextValue = {

@@ -1,6 +1,6 @@
 import React from "react";
 
-import FooterCredit from "./FooterCredit";
+import FooterCredit from "../FooterCredit/FooterCredit";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
