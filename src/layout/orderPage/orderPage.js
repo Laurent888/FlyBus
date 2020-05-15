@@ -20,7 +20,7 @@ const OrderPage = () => {
     onlyPrice,
     orderClicked,
     totalPrice,
-    resetAll
+    resetAll,
   } = useContext(FlybusContext);
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -29,8 +29,8 @@ const OrderPage = () => {
     return <p>Loading</p>;
   }
 
-  const renderedCatalogue = allPrice.map(item => {
-    let quantity = onlyPrice.filter(qty => {
+  const renderedCatalogue = allPrice.map((item) => {
+    let quantity = onlyPrice.filter((qty) => {
       return item.id === qty.id;
     })[0].quantity;
     return (
@@ -57,7 +57,7 @@ const OrderPage = () => {
                 objectFit: "cover",
                 objectPosition: "center",
                 height: "100%",
-                width: "100%"
+                width: "100%",
               }}
             />
           </div>
@@ -117,7 +117,9 @@ const OrderPage = () => {
         <div className="total-price">
           <h3 className="m-heading">
             Total price:{" "}
-            <span className="total-price__value">{totalPrice}</span>
+            <span className="total-price__value" data-testid="totalPrice">
+              {totalPrice}
+            </span>
             {totalPrice > 0 ? <span> millions &euro;</span> : null}
           </h3>
           <div className="buttons">

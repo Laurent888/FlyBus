@@ -5,7 +5,10 @@ import PropTypes from "prop-types";
 
 const AircraftGrid = (props) => {
   return (
-    <div className={`section ${props.isDarkTheme && "darkTheme"}`}>
+    <div
+      data-testid="aircraftGrid-container"
+      className={`section ${props.isDarkTheme && "darkTheme"}`}
+    >
       <h2 className="row m-heading">Current Products</h2>
       <div className="aircraft-grid row">
         {props.aircraft.map((item) => (

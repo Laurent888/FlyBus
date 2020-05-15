@@ -1,21 +1,19 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "../../../utils/test-utils";
+import "@testing-library/jest-dom/extend-expect";
+
 import ButtonLarge from "./ButtonLarge";
 
-describe("Button Large", () => {
-  const btnType = "btnPrimary";
-  const label = "test";
-  const clicked = () => console.log("ok");
+describe("Button large", () => {
+  const clicked = jest.fn();
 
-  const wrapper = shallow(
-    <ButtonLarge btnType={btnType} label={label} clicked={clicked} />
-  );
+  it("Render the component", () => {
+    render(
+      <ButtonLarge btnType="some type" label="some label" clicked={clicked} />
+    );
 
-  it("should render button large", () => {
-    expect(wrapper).toMatchSnapshot();
-  });
+    const label = screen.getByText("some label");
 
-  it("should have TEXT in the label", () => {
-    expect(wrapper.text()).toBe("test");
+    expect(label).toBeInTheDocument();
   });
 });
