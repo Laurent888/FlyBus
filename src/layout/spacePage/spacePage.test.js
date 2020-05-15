@@ -42,7 +42,7 @@ describe("Space Page", () => {
   };
 
   it("render the space page", () => {
-    render(
+    const { container } = render(
       <BrowserRouter>
         <FlybusContext.Provider value={contextValue}>
           <SpacePage />
@@ -55,5 +55,6 @@ describe("Space Page", () => {
 
     expect(productName).toBeInTheDocument();
     expect(darkThemeClass).toHaveClass("darkTheme");
+    expect(container.firstChild).toBeTruthy();
   });
 });

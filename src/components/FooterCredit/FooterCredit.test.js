@@ -1,12 +1,15 @@
 import React from "react";
 
 import FooterCredit from "./FooterCredit";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
 
 describe("Footer", () => {
   it("render footer", () => {
-    const wrapper = shallow(<FooterCredit />);
+    render(<FooterCredit />);
 
-    expect(wrapper.find("p").length).toBe(1);
+    const copyright = screen.getByText(/copyright/i);
+
+    expect(copyright).toBeInTheDocument();
   });
 });
