@@ -62,8 +62,8 @@
       @media screen and (max-width: 500px) {
         width: 100%;
         position: relative;
+        clip-path: none !important;
         .link-container::before {
-          clip-path: none;
           position: relative;
         }
       }
