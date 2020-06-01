@@ -1,0 +1,15 @@
+{
+  "menu": {
+    "commercial": "commercial",
+    "defense": "defense",
+    "space": "espace",
+    "order": "commander",
+    "company": "Notre entreprise"
+  },
+  "home": {
+    "welcome": "Bienvenue sur Flybus",
+    "presentation": "Flybus est une référence internationale dans le secteur aérospatial. Nous concevons, fabriquons et livrons des avions commerciaux, des hélicoptères, des transports militaires, des satellites et des lanceurs d'engins, ainsi que des services de données, de navigation, de communications sécurisées, de mobilité urbaine et d'autres solutions pour les clients à l'échelle mondiale. Avec une stratégie d'avenir basée sur des technologies de pointe, l'excellence numérique et scientifique, nous visons un monde mieux connecté, plus sûr et plus prospère",
+    "militaryProduct": "Matériels militaires",
+    "commercialProduct": "Aviation civil"
+  }
+}
